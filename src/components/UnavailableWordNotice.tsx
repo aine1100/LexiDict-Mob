@@ -1,6 +1,8 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { IllustrationFrame } from '@/src/components/IllustrationFrame';
+import { illustrations } from '@/src/constants/illustrations';
 import { colors, layout, typography } from '@/src/constants/theme';
 
 interface UnavailableWordNoticeProps {
@@ -12,6 +14,7 @@ interface UnavailableWordNoticeProps {
 export function UnavailableWordNotice({ word, onDismiss, onTryAnother }: UnavailableWordNoticeProps) {
   return (
     <View style={styles.wrap}>
+      <IllustrationFrame source={illustrations.bookStack} size="sm" style={styles.illustration} />
       <View style={styles.header}>
         <Ionicons name="book-outline" size={20} color={colors.orange} />
         <Text style={styles.title}>No dictionary entry</Text>
@@ -40,15 +43,18 @@ const styles = StyleSheet.create({
     borderColor: colors.black,
     padding: layout.screenPadding,
     marginBottom: 12,
+    alignItems: 'center',
   },
+  illustration: { alignSelf: 'stretch', marginBottom: 8 },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
     marginBottom: 8,
+    alignSelf: 'stretch',
   },
   title: { ...typography.bodySemiBold, color: colors.text, flex: 1 },
-  message: { ...typography.body, color: colors.textMuted, lineHeight: 22 },
+  message: { ...typography.body, color: colors.textMuted, lineHeight: 22, alignSelf: 'stretch' },
   button: {
     alignSelf: 'flex-start',
     marginTop: 12,

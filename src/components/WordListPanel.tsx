@@ -1,10 +1,10 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { ConfirmDialog } from '@/src/components/ConfirmDialog';
+import { IllustrationFrame } from '@/src/components/IllustrationFrame';
 import { illustrations } from '@/src/constants/illustrations';
 import { colors, layout, spacing, typography } from '@/src/constants/theme';
 
@@ -71,7 +71,7 @@ export function WordListPanel({
   if (words.length === 0) {
     return (
       <View style={styles.empty}>
-        <Image source={illustrations.bookStack} style={styles.emptyImage} contentFit="contain" />
+        <IllustrationFrame source={illustrations.bookStack} size="md" />
         <Text style={styles.emptyTitle}>{emptyTitle}</Text>
         <Text style={styles.emptyMessage}>{emptyMessage}</Text>
       </View>
@@ -257,7 +257,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: layout.screenPadding,
   },
-  emptyImage: { width: 140, height: 100, marginBottom: spacing.md },
   emptyTitle: { ...typography.sectionTitle, color: colors.text, marginBottom: 8, textAlign: 'center' },
   emptyMessage: { ...typography.body, color: colors.textMuted, textAlign: 'center' },
 });

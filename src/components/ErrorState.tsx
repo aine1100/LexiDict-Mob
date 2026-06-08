@@ -1,8 +1,8 @@
-import { Image } from 'expo-image';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { IllustrationFrame } from '@/src/components/IllustrationFrame';
 import { illustrations } from '@/src/constants/illustrations';
-import { colors, layout, typography } from '@/src/constants/theme';
+import { colors, layout, spacing, typography } from '@/src/constants/theme';
 
 interface ErrorStateProps {
   title: string;
@@ -23,7 +23,7 @@ export function ErrorState({
 }: ErrorStateProps) {
   return (
     <View style={styles.wrap}>
-      <Image source={illustrations.bookStack} style={styles.image} contentFit="contain" />
+      <IllustrationFrame source={illustrations.bookStack} size="xl" style={styles.illustration} />
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.message}>{message}</Text>
       <View style={styles.actions}>
@@ -45,8 +45,8 @@ export function ErrorState({
 }
 
 const styles = StyleSheet.create({
-  wrap: { alignItems: 'center', paddingVertical: 32, paddingHorizontal: 16 },
-  image: { width: 160, height: 120, marginBottom: 16 },
+  wrap: { alignItems: 'center', alignSelf: 'stretch', paddingVertical: spacing.lg, paddingHorizontal: spacing.md },
+  illustration: { width: '100%' },
   title: { ...typography.sectionTitle, color: colors.text, marginBottom: 8, textAlign: 'center' },
   message: { ...typography.body, color: colors.textMuted, textAlign: 'center', marginBottom: 20 },
   actions: { gap: 10, alignItems: 'center' },

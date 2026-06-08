@@ -6,9 +6,10 @@ import { colors, layout, spacing } from '@/src/constants/theme';
 
 interface ContentSheetProps {
   children: ReactNode;
+  centerContent?: boolean;
 }
 
-export function ContentSheet({ children }: ContentSheetProps) {
+export function ContentSheet({ children, centerContent = false }: ContentSheetProps) {
   const insets = useSafeAreaInsets();
   const bottomPad = 100 + Math.max(insets.bottom, spacing.md);
 
@@ -16,8 +17,13 @@ export function ContentSheet({ children }: ContentSheetProps) {
     <View style={styles.sheet}>
       <View style={styles.handle} />
       <ScrollView
+        style={styles.scroll}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={[styles.scrollContent, { paddingBottom: bottomPad }]}
+        contentContainerStyle={[
+          styles.scrollContent,
+          { paddingBottom: bottomPad },
+          centerContent && styles.scrollContentCentered,
+        ]}
         keyboardShouldPersistTaps="handled">
         {children}
       </ScrollView>
@@ -42,7 +48,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.border,
     marginBottom: spacing.md,
   },
+  scroll: { flex: 1 },
   scrollContent: {
     paddingHorizontal: layout.screenPadding,
+  },
+  scrollContentCentered: {
+    flexGrow: 1,
+    justifyContent: 'center',
   },
 });

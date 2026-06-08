@@ -112,7 +112,7 @@ export default function WordScreen() {
         onSearch={() => router.replace('/(drawer)/(tabs)/')}
       />
 
-      <ContentSheet>
+      <ContentSheet centerContent={!loading && Boolean(error)}>
         {loading ? <LoadingState /> : null}
 
         {!loading && error ? (
