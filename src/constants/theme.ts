@@ -43,6 +43,8 @@ export const typography = {
   screenTitle: { fontFamily: fonts.displayMedium, fontSize: 28, lineHeight: 34 },
   sectionTitle: { fontFamily: fonts.bodySemiBold, fontSize: 18, lineHeight: 24 },
   body: { fontFamily: fonts.body, fontSize: 16, lineHeight: 24 },
+  bodyMedium: { fontFamily: fonts.bodyMedium, fontSize: 16, lineHeight: 24 },
+  bodySemiBold: { fontFamily: fonts.bodySemiBold, fontSize: 16, lineHeight: 24 },
   caption: { fontFamily: fonts.bodyMedium, fontSize: 13, lineHeight: 18 },
   phonetic: { fontFamily: fonts.body, fontSize: 14, lineHeight: 20 },
   posLabel: {
@@ -71,6 +73,9 @@ export const layout = {
   heroMinHeight: 260,
   sheetOverlap: 24,
   bottomBarHeight: 72,
+  floatingTabBarHeight: 64,
+  floatingTabBarBottomGap: 12,
+  tabContentBottomInset: 96,
   alphabetColumns: 6,
 } as const;
 

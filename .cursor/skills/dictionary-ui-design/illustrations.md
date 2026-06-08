@@ -21,7 +21,7 @@ Curated free sources. **Customize primary color to `#FF6B35` or `#ED4546`** befo
 | Books stack | unDraw | [Books](https://undraw.co/illustration/books_wxzz) | Set accent to `#ED4546` |
 | Online learning | unDraw | Search "learning" on unDraw | Clean, professional |
 
-**Save as:** `assets/illustrations/onboarding.png` (or `.svg` via `react-native-svg`)
+**Project file:** `assets/illustration/person-reading.jpg` → Onboarding screen
 
 ### Home — Word of the Day mascot
 
@@ -31,8 +31,8 @@ Curated free sources. **Customize primary color to `#FF6B35` or `#ED4546`** befo
 | Dictionary / vocabulary | Storyset | Search "dictionary" or "vocabulary" | |
 | Book with face vibe | unDraw | Search "book" | Simpler flat style |
 
-**Save as:** `assets/illustrations/mascot-word-day.png`  
-**Size in UI:** ~96×96 inside card, `resizeMode: contain`
+**Project file:** `assets/illustration/cutebook.jpg` → Word-of-the-Day card (96×96)  
+**Size in UI:** ~96×96 inside card, `contentFit="contain"`
 
 ### Empty / error states
 
@@ -42,7 +42,7 @@ Curated free sources. **Customize primary color to `#FF6B35` or `#ED4546`** befo
 | No network | unDraw | "no data", "connection" |
 | No history | unDraw | "notes", "void" |
 
-**Save as:** `assets/illustrations/empty-not-found.png`, `empty-offline.png`
+**Project file:** `assets/illustration/book-stack.jpg` → Error states + empty drawer history
 
 ### Category icons (optional — use emoji first)
 
