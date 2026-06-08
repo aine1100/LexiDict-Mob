@@ -42,6 +42,7 @@ export function HeroHeader({
 
       {phonetic || audioOptions.length > 0 ? (
         <PronunciationPlayer
+          word={word}
           phonetic={phonetic}
           audioOptions={audioOptions}
           variant="onRed"

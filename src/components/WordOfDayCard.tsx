@@ -27,11 +27,14 @@ export function WordOfDayCard({
         <Text style={styles.label}>Word of the day</Text>
         <Text style={styles.word}>{word}</Text>
         {phonetic || audioOptions.length > 0 ? (
-          <PronunciationPlayer
-            phonetic={phonetic}
-            audioOptions={audioOptions}
-            variant="onCard"
-          />
+          <Pressable onPress={() => undefined}>
+            <PronunciationPlayer
+              word={word}
+              phonetic={phonetic}
+              audioOptions={audioOptions}
+              variant="onCard"
+            />
+          </Pressable>
         ) : null}
         {snippet ? <Text style={styles.snippet} numberOfLines={2}>{snippet}</Text> : null}
       </View>
